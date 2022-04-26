@@ -5,7 +5,9 @@ import './assets/tailwind.css'
 import VueTypedJs from 'vue-typed-js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueKinesis from 'vue-kinesis'
 
+Vue.use(VueKinesis)
 Vue.use(VueTypedJs)
 Vue.use(VueAxios, axios)
 

@@ -17,7 +17,7 @@ export default {
   components: { HeaderNav, FooterNav },
   data() {
     return {
-      isDark: false,
+      isDark: true,
     }
   },
 }
