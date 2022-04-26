@@ -1,19 +1,30 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+  <div id="app" class="mx-8" :class="isDark === true ? 'dark' : ''">
+    <Header></Header>
     <router-view/>
   </div>
 </template>
 
+<script>
+import Header from '@/components/NavHeader.vue'
+
+export default {
+  name: 'App',
+  components: { Header },
+  data() {
+    return {
+      isDark: true,
+    }
+  },
+}
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  
   color: #2c3e50;
 }
 
