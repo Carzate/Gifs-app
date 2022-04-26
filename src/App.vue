@@ -3,16 +3,18 @@
     <div class="container mx-auto" :class="isDark === true && 'dark'">
       <header-nav :darkMode="isDark"></header-nav>
       <router-view/>
+      <footer-nav></footer-nav>
     </div>
   </div>
 </template>
 
 <script>
 import HeaderNav from '@/components/NavHeader.vue'
+import FooterNav from '@/components/NavFooter.vue'
 
 export default {
   name: 'App',
-  components: { HeaderNav },
+  components: { HeaderNav, FooterNav },
   data() {
     return {
       isDark: false,
