@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="position: absolute; bottom: 0">
+        <div class="container" style="position: relative; bottom: 0">
           <footer class="p-4 rounded-lg md:flex md:items-center md:justify-between md:p-6">
               <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 © 2022 <a href="https://carzatev1.netlify.com" target="_blank" class="hover:underline">Carzate</a>

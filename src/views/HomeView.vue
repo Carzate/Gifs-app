@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-slate-900">
+  <div class="dark:bg-slate-900 dark:h-screen">
     <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-40"></span>
     <div class="absolute inset-x-0 md:top-80 min-h-0 pl-20 py-10 flex overflow-hidden z-0">
       <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
@@ -29,14 +29,30 @@
           </kinesis-container>
         </div>
       </div>
-      
+    </div>
+    <div class="py-6">
+      <h3 class="font-bold text-4xl lg:pl-10 dark:text-white flex">Trending
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      </h3>
+      <div class="lg:pl-10">
+        <vue-glide v-model="active" class="py-20 demo">
+          <vue-glide-slide v-for="i in 10" :key="i">
+            <img src="https://picsum.photos/400/200" alt="">
+          </vue-glide-slide>
+        </vue-glide>
+      </div>
     </div>
   </div>
-  
 </template>
 
 <script>
 export default {
-  
+  data() {
+    return {
+      active: 2
+    }
+  },
 }
 </script>

@@ -6,7 +6,10 @@ import VueTypedJs from 'vue-typed-js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueKinesis from 'vue-kinesis'
-
+import VueGlide from 'vue-glide-js'
+import 'vue-glide-js/dist/vue-glide.css'
+ 
+Vue.use(VueGlide)
 Vue.use(VueKinesis)
 Vue.use(VueTypedJs)
 Vue.use(VueAxios, axios)
