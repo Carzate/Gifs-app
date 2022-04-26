@@ -7,7 +7,9 @@
     </div>
     <div class="flex justify-between">
       <div class="dark:text-white lg:w-1/2 pl-10 pr-10 pb-20">
-        <h2 class="font-bold text-4xl xl:text-6xl pb-8">Descubre y obtén Gifs de Perritos 🐶</h2>
+        <vue-typed-js class="font-bold text-4xl xl:text-6xl pb-8" :strings="['y guarda', 'y guarda Gifs de Perritos 🐶']">
+          <h1>Descubre <span class="typing"></span></h1>
+        </vue-typed-js>
         <p class="text-base md:text-lg">Esta aplicación te ayuda a encontrar gifs de perritos, solo introduce cualquier texto en el campo de búsqueda</p>
       </div>
       <div class="grid grid-cols-2 gap-1 w-2/5">

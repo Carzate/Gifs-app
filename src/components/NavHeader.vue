@@ -135,6 +135,7 @@ export default {
   data() {
     return {
       links: [
+        { text: "Buscar", link: "/buscar" },
         { text: "Mis búsquedas", link: "/historial" },
         { text: "Mis favoritos", link: "/favoritos" },
       ],
