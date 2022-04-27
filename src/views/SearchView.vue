@@ -63,7 +63,7 @@ export default {
         this.gifs.info = response.data.data.map(element => {
           return {
             id: element.id,
-            url: element.images.original.url,
+            url: element.images.downsized.url,
             title: element.title,
             favorite: false
           }
