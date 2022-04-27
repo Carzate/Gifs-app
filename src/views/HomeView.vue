@@ -1,6 +1,6 @@
 <template>
   <div class="dark:bg-slate-900 dark:h-screen">
-    <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-40"></span>
+    <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-20"></span>
     <div class="absolute inset-x-0 md:top-80 min-h-0 pl-20 py-10 flex overflow-hidden z-0">
       <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
       <span class="block bg-[#04868b] w-72 h-72 -ml-20 mt-40 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
@@ -12,7 +12,7 @@
         </vue-typed-js>
         <p class="text-base md:text-lg">Esta aplicación te ayuda a encontrar gifs de perritos, solo introduce cualquier texto en el campo de búsqueda</p>
       </div>
-      <div class="grid grid-cols-2 gap-1 sm:w-full lg:w-2/5 pb-10">
+      <div class="grid grid-cols-2 gap-2 sm:w-full lg:w-2/5 pb-10">
         <div>
           <kinesis-container>
               <kinesis-element :strength="30">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="py-6">
-      <h3 class="font-bold text-4xl lg:pl-10 dark:text-white flex">Trending
+      <h3 class="font-bold text-4xl lg:pl-10 dark:text-white flex">Tendencias
         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>

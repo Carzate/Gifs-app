@@ -38,10 +38,10 @@
       </div>
       <div class="w-full block lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-          <a
+          <p
             v-for="(nav, index) in links"
             :key="index"
-            :href="nav.link"
+            @click="$router.push(nav.link)"
             class="
               block
               mt-4
@@ -51,10 +51,12 @@
               mr-4
               font-bold
               dark:text-white
+              mouse
             "
+            :class="nav.link == $route.path && 'text-blue-400 dark:text-blue-400'"
           >
             {{ nav.text }}
-          </a>
+          </p>
         </div>
         <div
           class="
@@ -102,27 +104,6 @@
               />
             </svg>
           </button>
-          <div
-            class="
-              relative
-              text-neutral-100
-              font-semibold
-              shadow-inner
-              rounded-full
-              w-8
-              h-8
-              sm:w-9 sm:h-9
-              ring-1 ring-white
-              dark:ring-neutral-900
-              text-slate-600
-            "
-          >
-            <img
-              class="absolute inset-0 w-full h-full object-cover rounded-full"
-              src="https://i.pravatar.cc/300"
-              alt="name placeholder"
-            />
-          </div>
         </div>
       </div>
     </nav>
@@ -135,6 +116,7 @@ export default {
   data() {
     return {
       links: [
+        { text: "Inicio", link: "/"},
         { text: "Buscar", link: "/buscar" },
         { text: "Mis búsquedas", link: "/historial" },
         { text: "Mis favoritos", link: "/favoritos" },
