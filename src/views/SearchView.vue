@@ -20,6 +20,16 @@
       <p class="pb-4 pt-2 dark:text-white text-center text-sm">Puedes buscar cualquier palabra relacionada con perritos ej: grandes, divertidos</p>
     </div>
     <gif-card class="lg:min-h-[800px]" :gifsInfo="gifs"></gif-card>
+    <div class="flex justify-center pb-14">
+      <button v-if="page != 0" class="inline-flex items-center py-2 px-4 mr-3 text-sm font-medium rounded-lg bg-blue-400 text-white border border-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click="page--, getInfoFromGiphy()">
+      <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+      Anterior
+      </button>
+      <button v-if="page*25 < gifs.pagination.total_count" class="inline-flex items-center py-2 px-4 text-sm font-medium rounded-lg bg-blue-400 text-white border border-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click="page++, getInfoFromGiphy()">
+      Siguiente
+      <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -34,20 +44,21 @@ export default {
       page: 0,
       gifs: {
         info: [],
+        pagination: {
+          total_count: 1000,
+        }
       },
-      favorites: []
+      favorites: [],
     }
   },
   methods: {
     clearAndSearch(){
-      this.gifs = {
-        info: []
-      },
+      this.gifs.info = []
       this.getInfoFromGiphy()
       this.saveLastSearch()
     },
     getInfoFromGiphy(){
-      this.axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ji8jX4TuV5K1R6OHaSA0tCWVzRld2YTR&q=${'perritos ' + this.text}&lang=es&limit=25&offset=${this.page + '0'}`)
+      this.axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ji8jX4TuV5K1R6OHaSA0tCWVzRld2YTR&q=${'perritos ' + this.text}&lang=es&limit=25&offset=${this.page*25}`)
       .then(response => {
         this.gifs.info = response.data.data.map(element => {
           return {
