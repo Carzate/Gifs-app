@@ -17,7 +17,7 @@
             </svg>
           </button>
       </form>
-      <p class="pb-4 pt-2 dark:text-white text-center text-sm">Puedes buscar culaquier palabra relacionada con perritos ej: grandes, divertidos</p>
+      <p class="pb-4 pt-2 dark:text-white text-center text-sm">Puedes buscar cualquier palabra relacionada con perritos ej: grandes, divertidos</p>
     </div>
     <gif-card class="lg:min-h-[800px]" :gifsInfo="gifs"></gif-card>
   </div>

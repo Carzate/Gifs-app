@@ -37,21 +37,34 @@
         </svg>
       </h3>
       <div class="lg:pl-10">
-        <vue-glide v-model="active" class="py-20 demo">
-          <vue-glide-slide v-for="i in 10" :key="i">
-            <img src="https://picsum.photos/400/200" alt="">
+        <vue-glide v-model="active" :autoplay="2500" class="py-20 demo">
+          <vue-glide-slide v-for="(img, index) in slider" :key="index">
+            <div style="width:100%;height:0;padding-bottom:72%;position:relative;">
+              <iframe :src="img.link" width="100%" height="270px" style="position:absolute; border-radius: 20px" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
           </vue-glide-slide>
         </vue-glide>
       </div>
     </div>
+    <footer-nav></footer-nav>
   </div>
 </template>
 
 <script>
+import FooterNav from '@/components/NavFooter.vue'
+
 export default {
+  components: { FooterNav },
   data() {
     return {
-      active: 2
+      active: 0,
+      slider: [
+        { link: 'https://giphy.com/embed/3o6ozzX4mAcwkkgzG8' },
+        { link: 'https://giphy.com/embed/eYilisUwipOEM' },
+        { link: 'https://giphy.com/embed/UkaZpqcieR38c' },
+        { link: 'https://giphy.com/embed/FDhOyyupdPuwM' },
+        { link: 'https://giphy.com/embed/xXxIj4rrbo92g' },
+      ]
     }
   },
 }

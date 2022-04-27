@@ -112,6 +112,7 @@
 
 <script>
 export default {
+  name: 'NavHeader',
   props: ["darkMode"],
   data() {
     return {
