@@ -1,20 +1,38 @@
 <template>
-    <div class="py-10 h-screen cursor-pointer">
-        <h3 class="font-bold text-4xl lg:pl-8 dark:text-white">Mis búsquedas
-            <div class="pt-10">
-                <ul class="w-1/2 text-sm font-medium border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">Profile</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">Settings</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">Messages</li>
-                    <li class="w-full px-4 py-2 rounded-b-lg">Download</li>
-                </ul>
-            </div>
-        </h3>
+    <div class="py-10 h-screen">
+        <h3 class="font-bold text-4xl lg:pl-8 dark:text-white">Mis búsquedas</h3>
+        <p class="text-sm pl-8 pt-4">Últimas 10 búsquedas, puedes hacer click en cada una para volver a buscar</p>
+        <div class="pt-8 pl-8">
+            <ul class="w-1/2 text-sm font-medium border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <li class="w-full px-4 py-2 dark:border-gray-600 cursor-pointer" :class="index != record.length - 1 ? 'border-b border-gray-200' : ''" v-for="(list, index) in record.slice().reverse()" :key="index" @click="search(list)">{{list.text}}</li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    
+    data() {
+        return {
+            record:[]
+        }
+    },
+    created() {
+        this.getRecord()
+    },
+    methods: {
+        getRecord(){
+            const list = localStorage.getItem('record')
+            if(list) { 
+                const recordList = JSON.parse(list)
+                recordList.map(element => {
+                    this.record.push({text: element})
+                })
+            }
+        },
+        search(list){
+            this.$router.push({ name: 'buscar', query: { searchText: list.text }})
+        }
+    },
 }
 </script>

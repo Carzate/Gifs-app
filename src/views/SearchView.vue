@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="px-6 pt-6 mb-4 bg-blue-50 dark:bg-slate-900 sticky top-0 z-50 rounded-lg">
-      <form class="flex items-center mx-auto pb-6 w-1/2" @submit.prevent="clearAndSearch">   
+      <form class="flex items-center mx-auto w-1/2" @submit.prevent="clearAndSearch">   
           <div class="relative w-full">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -17,6 +17,7 @@
             </svg>
           </button>
       </form>
+      <p class="pb-4 pt-2 dark:text-white text-center text-sm">Puedes buscar culaquier palabra relacionada con perritos ej: grandes, divertidos</p>
     </div>
     <gif-card class="lg:min-h-[800px]" :gifsInfo="gifs"></gif-card>
   </div>
@@ -43,6 +44,7 @@ export default {
         info: []
       },
       this.getInfoFromGiphy()
+      this.saveLastSearch()
     },
     getInfoFromGiphy(){
       this.axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ji8jX4TuV5K1R6OHaSA0tCWVzRld2YTR&q=${'perritos ' + this.text}&lang=es&limit=25&offset=${this.page + '0'}`)
@@ -66,9 +68,33 @@ export default {
           })
         }
       })
+    },
+    saveLastSearch(){
+      if(this.text != ''){
+        const list = localStorage.getItem('record')
+        if(list) { 
+          const recordList = JSON.parse(list)
+          if(recordList.length > 9){
+            recordList.splice(0,1)
+          }
+          recordList.push(this.text)
+          const deleteRepeated = recordList.filter((element, index) => {
+              return recordList.indexOf(element) === index;
+            }
+          )
+          localStorage.setItem('record', JSON.stringify(deleteRepeated))
+        }else{
+          const recordList = []
+          recordList.push(this.text)
+          localStorage.setItem('record', JSON.stringify(recordList))
+        }
+      }
     }
   },
   created() {
+    if(this.$route.query.searchText){
+      this.text = this.$route.query.searchText
+    }
     this.getInfoFromGiphy()
   },
 }
