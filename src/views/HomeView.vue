@@ -1,13 +1,13 @@
 <template>
-  <div class="dark:bg-slate-900">
-    <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-20"></span>
+  <div class="dark:bg-slate-900 p-3 md:p-0">
+    <span class="hidden lg:block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-20"></span>
     <div class="absolute inset-x-0 md:top-80 min-h-0 pl-20 py-10 flex overflow-hidden z-0">
       <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
       <span class="block bg-[#04868b] w-72 h-72 -ml-20 mt-40 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
     </div>
     <div class="flex justify-between flex-wrap">
       <div class="dark:text-white lg:w-1/2 lg:pl-10 lg:pr-10 pb-20">
-        <vue-typed-js class="font-bold text-4xl xl:text-6xl pb-8 min-h-[200px]" :loop="true" :strings="['y guarda', 'y guarda Gifs de Perritos 🐶']">
+        <vue-typed-js class="font-bold text-4xl xl:text-6xl pb-8 min-h-[140px] md:min-h-[200px]" :loop="true" :strings="['y guarda', 'y guarda Gifs de Perritos 🐶']">
           <h1>Descubre <span class="typing"></span></h1>
         </vue-typed-js>
         <p class="text-base md:text-lg">Esta aplicación te ayuda a encontrar gifs de perritos, solo introduce cualquier texto en el campo de búsqueda</p>
@@ -37,9 +37,9 @@
         </svg>
       </h3>
       <div class="lg:pl-10">
-        <vue-glide v-model="active" :autoplay="2500" class="py-20 demo">
+        <vue-glide v-model="active" :autoplay="2500" :breakpoints="{ 800: { perView: 1 } }" class="py-3 lg:py-20 block">
           <vue-glide-slide v-for="(img, index) in slider" :key="index">
-            <div style="width:100%;height:0;padding-bottom:72%;position:relative;">
+            <div style="width:100%;height:270px;padding-bottom:72%;position:relative;">
               <iframe :src="img.link" width="100%" height="270px" style="position:absolute; border-radius: 20px" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             </div>
           </vue-glide-slide>

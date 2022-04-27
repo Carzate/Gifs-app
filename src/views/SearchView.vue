@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="px-6 pt-6 mb-4 bg-blue-50 dark:bg-slate-900 sticky top-0 z-50 rounded-lg">
-      <form class="flex items-center mx-auto w-1/2" @submit.prevent="clearAndSearch">   
+    <div class="px-6 pt-3 lg:pt-6 mb-4 bg-blue-50 dark:bg-slate-900 sticky top-0 z-50 rounded-lg">
+      <form class="flex items-center mx-auto lg:w-1/2" @submit.prevent="clearAndSearch">   
           <div class="relative w-full">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
