@@ -3,7 +3,7 @@
     <nav class="flex items-center justify-between flex-wrap py-6 px-6">
       <div class="flex items-center flex-shrink-0 text-black mr-6">
         <img
-          class="mr-4 mouse"
+          class="mr-4 cursor-pointer"
           src="@/assets/img/logo.svg"
           width="40"
           @click="$router.push('/')"
@@ -51,7 +51,7 @@
               mr-4
               font-bold
               dark:text-white
-              mouse
+              cursor-pointer
             "
             :class="nav.link == $route.path && 'text-blue-400 dark:text-blue-400'"
           >

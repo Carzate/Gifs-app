@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-slate-900 dark:h-screen">
+  <div class="dark:bg-slate-900">
     <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:h-20"></span>
     <div class="absolute inset-x-0 md:top-80 min-h-0 pl-20 py-10 flex overflow-hidden z-0">
       <span class="block bg-[#ef233c] w-72 h-72 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-6 pt-6 mb-4 bg-blue-50 dark:bg-slate-900 sticky top-0 z-50">
+    <div class="px-6 pt-6 mb-4 bg-blue-50 dark:bg-slate-900 sticky top-0 z-50 rounded-lg">
       <form class="flex items-center mx-auto pb-6 w-1/2" @submit.prevent="clearAndSearch">   
           <div class="relative w-full">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

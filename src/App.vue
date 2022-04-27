@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="isDark && 'bg-slate-900'">
+  <div id="app" :class="isDark && 'bg-slate-900'" class="min-h-screen">
     <div class="container mx-auto" :class="isDark === true && 'dark'">
       <header-nav :darkMode="isDark"></header-nav>
       <router-view/>
@@ -24,7 +24,6 @@ export default {
 </script>
 
 <style>
-@import '@/assets/styles.css';
 
 #app {
   font-family: 'Poppins', sans-serif;
