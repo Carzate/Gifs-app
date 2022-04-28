@@ -2,8 +2,8 @@
     <div>
         <div class="lg:columns-4 md:columns-3 sm:columns-2 gap-2 w-3/4 mx-auto space-y-3 pb-14">
             <div class="relative break-inside-avoid rounded-xl" v-for="(gif, index) in gifsInfo.info" :key="index" >
-                <img :src="gif.url" class="rounded-xl">
-                <div class="absolute top-3 bg-black/50 left-3 p-2 rounded-xl cursor-pointer">
+                <progressive-img :src="gif.url" placeholder="https://unsplash.it/1920/1080?image=10" class="rounded-xl z-0"></progressive-img>
+                <div class="absolute top-3 bg-black/50 left-3 p-2 rounded-xl cursor-pointer z-20">
                     <svg v-if="gif.favorite" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor" @click="deleteFavorite(gif)">
                         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                     </svg>
