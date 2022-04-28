@@ -1,6 +1,5 @@
 # Worky
 
-<<<<<<< README.md
 Construye un Giphy client que busque perritos, de preferencia en Vue.js
 Responsivo.
 
