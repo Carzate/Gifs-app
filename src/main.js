@@ -8,7 +8,9 @@ import VueAxios from 'vue-axios'
 import VueKinesis from 'vue-kinesis'
 import VueGlide from 'vue-glide-js'
 import 'vue-glide-js/dist/vue-glide.css'
- 
+import VueProgressiveImage from 'vue-progressive-image'
+
+Vue.use(VueProgressiveImage)
 Vue.use(VueGlide)
 Vue.use(VueKinesis)
 Vue.use(VueTypedJs)
