@@ -1,24 +1,27 @@
-# worky
+# Worky
 
-## Project setup
-```
-npm install
-```
+Construye un Giphy client que busque perritos, de preferencia en Vue.js
+Responsivo.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Utiliza componentes reutilizables.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Maneja animaciones que le den ganas al usuario de regresar.
 
-### Lints and fixes files
-```
-npm run lint
-```
+Guardar Mis búsquedas anteriores en localstorage.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Guardar Mis favoritos en localstorage.
+
+Sube tu propuesta al repositorio como Merge Request.
+
+Opcionalmente: Usa tailwind para definir los estilos de tu componentes.
+Nota: Si utilizas Vue, debe ser en la versión 2.x
+
+## Demo del proyecto
+
+https://worky-test.netlify.app/
+
+### Herramientas utilizadas
+
+- Tailwind CSS
+- Vue.js
+- Giphy API
