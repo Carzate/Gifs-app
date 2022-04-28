@@ -6,11 +6,15 @@
       <span class="block bg-[#04868b] w-72 h-72 -ml-20 mt-40 rounded-full filter blur-3xl opacity-10 lg:w-96 lg:h-96"></span>
     </div>
     <div class="flex justify-between flex-wrap">
-      <div class="dark:text-white lg:w-1/2 lg:pl-10 lg:pr-10 pb-20">
+      <div class="dark:text-white lg:w-1/2 lg:pl-10 lg:pr-10 pb-10 lg:pb-20">
         <vue-typed-js class="font-bold text-4xl xl:text-6xl pb-8 min-h-[140px] md:min-h-[200px]" :loop="true" :strings="['y guarda', 'y guarda Gifs de Perritos 🐶']">
           <h1>Descubre <span class="typing"></span></h1>
         </vue-typed-js>
         <p class="text-base md:text-lg">Esta aplicación te ayuda a encontrar gifs de perritos, solo introduce cualquier texto en el campo de búsqueda</p>
+        <button class="relative h-auto inline-flex items-center justify-center rounded-full text-white bg-blue-500 p-4 mt-8 lg:mt-10 hover:bg-blue-600" @click="$router.push('/buscar')">
+          <span>Empieza tu búsqueda</span>
+          <svg class="w-5 h-5 ml-2.5" viewBox="0 0 24 24" fill="none"><path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 22L20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
       </div>
       <div class="grid grid-cols-2 gap-2 sm:w-full lg:w-2/5 pb-10">
         <div>
